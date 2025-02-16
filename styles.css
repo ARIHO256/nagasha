@@ -77,7 +77,6 @@ div.letter-wrapper {
 
 /* Letter Styles */
 .letter {
-  display: inline;
   max-width: 60%;
   border-radius: 1em;
   position: relative;
