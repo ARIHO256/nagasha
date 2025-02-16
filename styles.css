@@ -12,7 +12,7 @@ body, html {
   font-size: large;
   font-weight: bold;
   font-family: 'Lora', serif;
-  background-image: url('collines.jpg'); 
+  /*background-image: url('collines.jpg');*/ 
   background-size: cover;
 }
 
