@@ -5,7 +5,7 @@ $(document).ready(function() {
   setButtonHeight(); // Adjust button positioning based on the content height
 
   // Forward button click event
-  $('.forward p').click(function() {
+  $('.next p').click(function() {
     var active = $('.active').next(); // Get the next letter
 
     // Remove 'active' class from all letters
@@ -22,7 +22,7 @@ $(document).ready(function() {
   });
 
   // Back button click event
-  $('.back p').click(function() {
+  $('.backi p').click(function() {
     var active = $('.active').prev(); // Get the previous letter
 
     // Remove 'active' class from all letters
@@ -41,8 +41,8 @@ $(document).ready(function() {
   // Function to adjust the button's vertical position based on the letter wrapper height
   function setButtonHeight() {
     var height = $('.letter-wrapper').height();
-    $('div.back p').css({ top: height / 2 + 'px' });
-    $('div.forward p').css({ top: height / 2 + 'px' });
+    $('div.backi p').css({ top: height / 2 + 'px' });
+    $('div.next p').css({ top: height / 2 + 'px' });
   }
 
 });
