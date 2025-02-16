@@ -4,65 +4,87 @@
 /* Reset default styles */
 body, html {
   padding: 0;
-  margin: 0;
+  background-color:blueviolet;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   font-size: large;
   font-weight: bold;
   font-family: 'Lora', serif;
-  background-color: blueviolet;
-  background-size: cover;
-  color: white; /* Ensures text is visible */
+  background-image: url(collines.jpg); 
+  background-size:cover;
 }
 
 /* Main wrapper */
 div.wrapper {
-  font-family: 'Lora', serif;
+  font-family: 'Lora', serif; /* Use Lora for text */
   max-width: 900px;
-  width: 90%;
-  margin: auto;
+  width: 90%; /* Makes it flexible */
+  margin: auto; /* Centers content */
+}
+
+/* Clearfix fix */
+div.clearfix {
+  float: none;
+  clear: both;
+}
+
+.back {
+  margin: 0px;
 }
 
 /* Back & Forward Buttons */
-div.back, div.forward {
+div.back,
+div.forward {
   width: 15%;
   text-align: center;
 }
 
-div.back p, div.forward p {
+div.back p,
+div.forward p {
+  position:inherit;
   margin: 0;
   font-weight: 700;
   cursor: pointer;
   top: 30%;
 }
 
-div.back p span, div.forward p span {
+/* Button Styling */
+div.back p span,
+div.forward p span {
   display: inline-block;
   border-radius: 1em;
   padding: 0.5em 1em;
   margin: 0.5em;
 }
 
-div.back p:hover span, div.forward p:hover span {
+/* Hover Effect */
+div.back p:hover span,
+div.forward p:hover span {
   background-color: rgb(214, 183, 232);
 }
 
 /* Letter Wrapper */
 div.letter-wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Ensure buttons are on the right of the quote */
   max-width: 630px;
-  width: 100%;
+  width: 100%; /* Full width on smaller screens */
   margin: auto;
-  align-items: center;
+  align-items: center; /* Vertically center items */
 }
 
 /* Letter Styles */
 .letter {
-  
+  display: inline;
   max-width: 60%;
   border-radius: 1em;
+  position: relative;
   padding: 1em 2em;
   overflow: hidden;
   margin: auto;
+  flex-grow: 1; /* Allow letter to take remaining space */
 }
 
 .letter:nth-of-type(odd) {
@@ -77,9 +99,13 @@ div.letter-wrapper {
   display: block;
 }
 
+.letter div {
+  width: 100%;
+}
+
 /* Font Styles */
 .cursive {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive; /* For cursive text */
   font-size: 1.25em;
 }
 
@@ -88,10 +114,12 @@ div.letter-wrapper {
 }
 
 .writer {
+  white-space: pre;
   margin-top: 0.5em;
   font-family: 'Dancing Script', cursive;
 }
 
+/* Love Always Text Fix */
 .writer:before {
   content: "Love always,\A";
   white-space: pre;
@@ -100,25 +128,32 @@ div.letter-wrapper {
 /* Heart Shape */
 .heart {
   position: absolute;
-  width: 50px;
+  width: 50px; /* Reduced for small screens */
   height: 45px;
+  z-index: 0;
   opacity: 0.4;
   bottom: 10px;
   right: 20px;
 }
 
-.heart:before, .heart:after {
+.heart:before,
+.heart:after {
   position: absolute;
   content: "";
+  left: 25px;
+  top: 0;
   width: 25px;
   height: 40px;
   background: red;
   border-radius: 50px 50px 0 0;
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) scale(1, 1);
+  transform-origin: 0 100%;
 }
 
 .heart:after {
-  transform: rotate(45deg);
+  left: 0;
+  transform: rotate(45deg) scale(1, 1);
+  transform-origin: 100% 100%;
 }
 
 /* 🔥 Responsive Fixes for Mobile */
@@ -127,8 +162,13 @@ div.letter-wrapper {
     width: 95%;
   }
 
-  div.back, div.forward {
-    width: 25%;
+  div.back,
+  div.forward {
+    width: 25%; /* Adjust button sizes */
+  }
+
+  div.letter-wrapper {
+    width: 100%;
   }
 
   .letter {
@@ -136,18 +176,21 @@ div.letter-wrapper {
   }
 
   .cursive {
-    font-size: 1.1em;
+    font-size: 1.1em; /* Reduce font size */
   }
 
   .heart {
     width: 30px;
     height: 25px;
+    bottom: 5px;
+    right: 10px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  div.back, div.forward {
-    width: 30%;
+  div.back,
+  div.forward {
+    width: 30%; /* Buttons take more space */
     font-size: 0.8em;
   }
 
@@ -160,11 +203,11 @@ div.letter-wrapper {
   }
 
   .heart {
-    display: none;
+    display: none; /* Hide on very small screens */
   }
 }
-
-/* Rounded Images */
-img {
+img{
   border-radius: 50%;
+  position: inherit;
+  
 }
