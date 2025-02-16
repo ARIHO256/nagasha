@@ -1,47 +1,48 @@
-$(window).ready(function(){
+$(document).ready(function() {
 
   var letters = $('.letter');
-  $(letters[0]).addClass('active');
-  setButtonHeight();
+  $(letters[0]).addClass('active'); // Make the first letter active by default
+  setButtonHeight(); // Adjust button positioning based on the content height
 
-  $('.forward p').click(function(){
-    var active = $('.active').next();
+  // Forward button click event
+  $('.forward p').click(function() {
+    var active = $('.active').next(); // Get the next letter
+
+    // Remove 'active' class from all letters
     for (var i = letters.length - 1; i >= 0; i--) {
       $(letters[i]).removeClass('active');
     }
 
+    // If there is a next letter, make it active, else loop back to the first letter
     if ($(active).hasClass('letter')) {
       $(active).addClass('active');
     } else {
       $(letters[0]).addClass('active');
     }
-
-    // setButtonHeight();
-
   });
 
-  $('.back p').click(function(){
+  // Back button click event
+  $('.back p').click(function() {
+    var active = $('.active').prev(); // Get the previous letter
 
-    var active = $('.active').prev();
+    // Remove 'active' class from all letters
     for (var i = letters.length - 1; i >= 0; i--) {
       $(letters[i]).removeClass('active');
     }
 
+    // If there is a previous letter, make it active, else loop to the last letter
     if ($(active).hasClass('letter')) {
       $(active).addClass('active');
     } else {
-      $(letters[letters.length -1]).addClass('active');
+      $(letters[letters.length - 1]).addClass('active');
     }
-
-    // setButtonHeight();
-
   });
 
+  // Function to adjust the button's vertical position based on the letter wrapper height
   function setButtonHeight() {
     var height = $('.letter-wrapper').height();
-    $('div.back p').css({ top: height/2 + 'px' });
-    $('div.forward p').css({ top: height/2 + 'px' });
-
+    $('div.back p').css({ top: height / 2 + 'px' });
+    $('div.forward p').css({ top: height / 2 + 'px' });
   }
 
 });
