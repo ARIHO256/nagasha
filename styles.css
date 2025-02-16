@@ -10,6 +10,7 @@ body, html {
   font-family: 'Lora', serif;
   background-color: blueviolet;
   background-size: cover;
+  color: white; /* Ensures text is visible */
 }
 
 /* Main wrapper */
@@ -56,6 +57,7 @@ div.letter-wrapper {
 
 /* Letter Styles */
 .letter {
+  display: block; /* Ensures content is visible by default */
   max-width: 60%;
   border-radius: 1em;
   padding: 1em 2em;
@@ -162,6 +164,7 @@ div.letter-wrapper {
   }
 }
 
+/* Rounded Images */
 img {
   border-radius: 50%;
 }
