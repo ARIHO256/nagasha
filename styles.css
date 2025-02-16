@@ -1,16 +1,6 @@
 /* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&display=swap');
 
-/* Reset default styles */
-body, html {
-  padding: 0;
-  margin: 0;
-  font-size: large;
-  font-weight: bold;
-  font-family: 'Lora', serif;
-  background-color: blueviolet;
-  background-size: cover;
-}
 
 /* Main wrapper */
 div.wrapper {
