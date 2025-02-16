@@ -64,7 +64,6 @@ div.letter-wrapper {
 
 /* Letter Styles */
 .letter {
-  display: none;
   width: 100%;
   max-width: 90%;
   border-radius: 1em;
