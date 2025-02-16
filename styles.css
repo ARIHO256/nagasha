@@ -1,0 +1,213 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&display=swap');
+
+/* Reset default styles */
+body, html {
+  padding: 0;
+  background-color:blueviolet;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  background-image: url(collines.jpg); 
+  background-size:cover;
+}
+
+/* Main wrapper */
+div.wrapper {
+  font-family: 'Lora', serif; /* Use Lora for text */
+  max-width: 900px;
+  width: 90%; /* Makes it flexible */
+  margin: auto; /* Centers content */
+}
+
+/* Clearfix fix */
+div.clearfix {
+  float: none;
+  clear: both;
+}
+
+.back {
+  margin: 0px;
+}
+
+/* Back & Forward Buttons */
+div.back,
+div.forward {
+  width: 15%;
+  text-align: center;
+}
+
+div.back p,
+div.forward p {
+  position:inherit;
+  margin: 0;
+  font-weight: 700;
+  cursor: pointer;
+  top: 30%;
+}
+
+/* Button Styling */
+div.back p span,
+div.forward p span {
+  display: inline-block;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+}
+
+/* Hover Effect */
+div.back p:hover span,
+div.forward p:hover span {
+  background-color: rgb(214, 183, 232);
+}
+
+/* Letter Wrapper */
+div.letter-wrapper {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Ensure buttons are on the right of the quote */
+  max-width: 630px;
+  width: 100%; /* Full width on smaller screens */
+  margin: auto;
+  align-items: center; /* Vertically center items */
+}
+
+/* Letter Styles */
+.letter {
+  display: none;
+  max-width: 60%;
+  border-radius: 1em;
+  position: relative;
+  padding: 1em 2em;
+  overflow: hidden;
+  margin: auto;
+  flex-grow: 1; /* Allow letter to take remaining space */
+}
+
+.letter:nth-of-type(odd) {
+  background-color: rgba(233, 133, 135, 0.5);
+}
+
+.letter:nth-of-type(even) {
+  background-color: rgba(214, 183, 232, 0.5);
+}
+
+.letter.active {
+  display: block;
+}
+
+.letter div {
+  width: 100%;
+}
+
+/* Font Styles */
+.cursive {
+  font-family: 'Dancing Script', cursive; /* For cursive text */
+  font-size: 1.25em;
+}
+
+.body {
+  font-size: 1em;
+}
+
+.writer {
+  white-space: pre;
+  margin-top: 0.5em;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Love Always Text Fix */
+.writer:before {
+  content: "Love always,\A";
+  white-space: pre;
+}
+
+/* Heart Shape */
+.heart {
+  position: absolute;
+  width: 50px; /* Reduced for small screens */
+  height: 45px;
+  z-index: 0;
+  opacity: 0.4;
+  bottom: 10px;
+  right: 20px;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 25px;
+  top: 0;
+  width: 25px;
+  height: 40px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg) scale(1, 1);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg) scale(1, 1);
+  transform-origin: 100% 100%;
+}
+
+/* 🔥 Responsive Fixes for Mobile */
+@media screen and (max-width: 768px) {
+  div.wrapper {
+    width: 95%;
+  }
+
+  div.back,
+  div.forward {
+    width: 25%; /* Adjust button sizes */
+  }
+
+  div.letter-wrapper {
+    width: 100%;
+  }
+
+  .letter {
+    padding: 1em;
+  }
+
+  .cursive {
+    font-size: 1.1em; /* Reduce font size */
+  }
+
+  .heart {
+    width: 30px;
+    height: 25px;
+    bottom: 5px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.back,
+  div.forward {
+    width: 30%; /* Buttons take more space */
+    font-size: 0.8em;
+  }
+
+  .cursive {
+    font-size: 1em;
+  }
+
+  .body {
+    font-size: 0.9em;
+  }
+
+  .heart {
+    display: none; /* Hide on very small screens */
+  }
+}
+img{
+  border-radius: 50%;
+  position: inherit;
+  
+}
